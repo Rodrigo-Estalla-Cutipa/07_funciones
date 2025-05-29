@@ -5,12 +5,15 @@ int factorial(int);
 
 int main(){
 	int m, n, c;
-    
-	cin >> m >> n;
+    cout << "CALCULAR COMBINATORIA DE DOS NUMEROS" << endl;
+    cout << "Ingrese el valor de m: ";
+	cin >> m;
+    cout << "Ingrese el valor de n: ";
+    cin >> n;
 
 	c = factorial(m) / (factorial(n) * factorial (m-n));
 
-	cout << c;
+	cout << "El resultado de la combinatoria es: " << c;
 	return 0;
 }
 
