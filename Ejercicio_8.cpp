@@ -1,27 +1,30 @@
 #include <iostream>
 using namespace std;
 
+int mcd (int, int);
+
 int main(){
-    int n1, n2, a, b, resto, mcd, mcm;
+    int a, b, r1, r2;
     
     cout << "Ingrese el primer numero:" << endl;
-    cin >> n1;
+    cin >> a;
     cout << "Ingrese el segundo numero:" << endl;
-    cin >> n2;
+    cin >> b;
 
-    a = n1;
-    b = n2;
+    r1 = mcd(a,b);
+    r2 = a*b/r1;
+    
+    cout << "El maximo comun divisor es: " << r1 << endl;
+    cout << "El minimo comun multiplo es: " << r2 << endl;
+    return 0;
+}
 
+int mcd(int a, int b){
+    int resto;
     while (b != 0) {
 		resto = a % b;
 		a = b;
 		b = resto;
     }
-    mcd = a;
-    
-    mcm = (n1 * n2)/mcd;
-
-    cout << "El máximo comun divisor es:" << mcd << endl;
-    cout << "El minimo comun multiplo es:" << mcm << endl;
-    return 0;
+    return a;
 }
