@@ -6,10 +6,16 @@ float factorial(int);
 int main(){
     int n;
     float s;
+    n = 0;
     s = 0;
 
-    cout << "Ingrese el valor de n:" << endl;
-    cin >> n;
+    while (n<=0) {
+        cout << "Ingrese el valor de n:" << endl;
+        cin >> n;
+        if (n<=0) {
+            cout <<"ERROR: Debe ingresar un numero entero positivo mayor a cero" << endl;
+        }
+    }
 
     for (int i=1; i<=n; i++) {
         s = s + (factorial(i) / (2*i));
